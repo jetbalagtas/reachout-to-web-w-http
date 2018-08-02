@@ -14,7 +14,7 @@ class Blog extends Component {
   }
 
   componentDidMount () {
-    axios.get('http://jsonplaceholder.typicode.com/posts')
+    axios.get('/posts')
       .then(response => {
         // there seems to be too many posts from our demo REST server
         // in a real application, you can send some query parameters to your backend to restrict the amount of data retrieved, basically pagination
