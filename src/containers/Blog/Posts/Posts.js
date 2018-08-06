@@ -10,6 +10,7 @@ class Posts extends Component {
   }
 
   componentDidMount () {
+    console.log('this.props: ', this.props);
     axios.get('/posts')
       .then(response => {
         // there seems to be too many posts from our demo REST server
