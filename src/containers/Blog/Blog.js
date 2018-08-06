@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import axios from 'axios';
-import { Route, Link } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 
 import './Blog.css';
 import Posts from './Posts/Posts';
@@ -19,12 +19,19 @@ class Blog extends Component {
         <header>
           <nav>
             <ul>
-              <li><Link to='/'>Home</Link></li>
-              <li><Link to={{
+              <li><NavLink // the key takeaway is that the NavLink automatically attaches the 'active' class
+                to='/'
+                exact
+                activeClassName='my-active' // but you can also use a custom class
+                activeStyle={{ // or you can also use inline styling
+                  color: '#fa923f',
+                  textDecoration: underline
+                }}>Home</NavLink></li>
+              <li><NavLink to={{
                 pathname: '/new-post', // absolute path. relative path: this.props.match.url + '/new-post'
                 hash: '#submit', // example if setting up the path
                 search: '?quick-submit=true' // example if setting up the path
-              }}>New Post</Link></li>
+              }}>New Post</NavLink></li>
             </ul>
           </nav>
         </header>
