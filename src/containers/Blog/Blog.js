@@ -25,7 +25,7 @@ class Blog extends Component {
                 activeClassName='my-active' // but you can also use a custom class
                 activeStyle={{ // or you can also use inline styling
                   color: '#fa923f',
-                  textDecoration: underline
+                  textDecoration: 'underline'
                 }}>Home</NavLink></li>
               <li><NavLink to={{
                 pathname: '/new-post', // absolute path. relative path: this.props.match.url + '/new-post'
