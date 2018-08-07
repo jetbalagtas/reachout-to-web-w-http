@@ -25,7 +25,8 @@ class NewPost extends Component {
     axios.post('/posts', data)
       .then(response => {
         console.log(response);
-        this.setState({submitted: true});
+        this.props.history.push('/posts'); // 'this.props.history.push' does not replace the stack, allowing historical back button navigation
+        // this.setState({submitted: true}); // changing state, like 'this.props.history.replace' replaces the stack
       });
   }
 
